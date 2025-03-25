@@ -8,6 +8,8 @@ import 'package:news_clean_architecture/src/pages/daily_news/domain/repositories
 import 'package:news_clean_architecture/src/pages/daily_news/domain/usecases/daily_news_usecase.dart';
 import 'package:news_clean_architecture/src/pages/daily_news/presentation/bloc/daily_news_data_bloc.dart';
 
+import '../bloc/loader_cubit.dart';
+
 final sl = GetIt.instance;
 
 Future<void> initializeDependencies() async {
@@ -23,6 +25,8 @@ Future<void> initializeDependencies() async {
 
   //common injection
   sl.registerSingleton<Dio>(dio);
+  sl.registerLazySingleton<LoaderCubit>(() => LoaderCubit());
+
 
   // service injections
   sl.registerSingleton<DailyNewsApiService>(DailyNewsApiService(sl()));

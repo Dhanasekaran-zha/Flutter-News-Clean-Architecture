@@ -55,6 +55,9 @@ dependencies:
   # svg image
   flutter_svg: ^2.0.17
 
+  #web_view
+  webview_flutter: ^4.10.0
+
   cuberto_bottom_bar: ^3.1.0
 
 dev_dependencies:

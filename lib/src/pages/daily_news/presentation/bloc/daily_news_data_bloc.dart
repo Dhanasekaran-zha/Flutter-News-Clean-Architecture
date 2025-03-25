@@ -17,6 +17,7 @@ class DailyNewsDataBloc extends Bloc<DailyNewsDataEvent, DailyNewsDataState> {
     Emitter<DailyNewsDataState> emit,
   ) async {
     if (event is GetTopHeadlines) {
+      emit(DailyNewsDataStateLoading());
       final dataState = await _dailyNewsUseCase.call(
         TopHeadLinesParams(apiKey: event.apiKey, country: event.country),
       );

@@ -37,19 +37,9 @@ class _DashboardState extends State<Dashboard> {
         onPageChanged: _onPageChanged,
         children: [
           Center(child: DailyNewsScreen()),
-          Center(child: Text('Search Screen', style: TextStyle(fontSize: 24))),
-          Center(child: Text('Profile Screen', style: TextStyle(fontSize: 24))),
+          Center(child: Text('Saved News', style: TextStyle(fontSize: 24))),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          _onItemTapped(1); // Navigate to Search Screen
-        },
-        backgroundColor: Colors.blue,
-        shape: CircleBorder(),
-        child: Icon(Icons.search, size: 28, color: Colors.white),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
       bottomNavigationBar: BottomAppBar(
         shape: CircularNotchedRectangle(),
         notchMargin: 8.0,
@@ -60,9 +50,8 @@ class _DashboardState extends State<Dashboard> {
               icon: Icon(Icons.home, color: _selectedIndex == 0 ? Colors.blue : Colors.grey),
               onPressed: () => _onItemTapped(0),
             ),
-            SizedBox(width: 40), // Space for FAB
             IconButton(
-              icon: Icon(Icons.person, color: _selectedIndex == 2 ? Colors.blue : Colors.grey),
+              icon: Icon(Icons.save, color: _selectedIndex == 2 ? Colors.blue : Colors.grey),
               onPressed: () => _onItemTapped(2),
             ),
           ],
